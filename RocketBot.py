@@ -1,20 +1,15 @@
-from instagram_web_api import Client, ClientCompatPatch, ClientError
-from RocketClient import RocketClient
-import os
-import discord
-import random
-from dotenv import load_dotenv
+import os, discord, random, dotenv, RocketClient
 
-load_dotenv()
+dotenv.load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 ROCKET_ID =  os.getenv('ROCKET_ID')
 
-rocket_client = RocketClient()
-rocket_urls = []
-cursor = None
-
 client = discord.Client()
 e = discord.Embed()
+
+rocket_client = RocketClient.RocketClient()
+rocket_urls = []
+cursor = None
 
 while True: # get rocket urls until there's no cursor
   rocket_feed = rocket_client.user_feed(ROCKET_ID, count=50, end_cursor=cursor, query=cursor)
