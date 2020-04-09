@@ -2,7 +2,7 @@
 
 **Bringing Rocket to You**
 
-RocketBot is a Discord bot that automatically collects URLs to all of Rocket's photos.
+RocketBot is a Discord bot that automatically collects URLs to all of Rocket's photos and posts them on command.
 
 ---
 
@@ -21,6 +21,10 @@ pip install
 ## Running
 
 `python RocketBot.py`
+
+## Usage
+
+`+rocket` wherever RocketBet is installed
 
 ## TODO
 
