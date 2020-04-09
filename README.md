@@ -31,8 +31,9 @@ RocketBot can be easily be deployed to Heroku:
 
 1. Install the Heroku CLI and `heroku login`
 2. Create your own RocketBot app with `heroku create <optional-name>`
-3. Deploy RocketBot using `git push heroku master`
-4. Set your `ROCKET_ID` and `DISCORD_TOKEN` environment variables
+3. Set your `ROCKET_ID` and `DISCORD_TOKEN` heroku environment variables
+4. Deploy RocketBot using `git push heroku master`
+
 
 ## Contributing
 
