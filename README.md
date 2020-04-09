@@ -2,15 +2,14 @@
 
 **Bringing Rocket to You**
 
-RocketBot is a Discord bot that automatically collects URLs to all of Rocket's photos and embeds them on command.
+RocketBot collects URLs from Rocket's Instagram and embeds them in Discord on command.
 
 ---
 
 ## Installation
 
-```
-pip install
-```
+`pip install`
+
 ### Environment Variables
 
 `ROCKET_ID` - Verify your ROCKET_ID at https://www.instagram.com/ohrocketdog/
@@ -25,7 +24,3 @@ pip install
 ## Usage
 
 `+rocket` wherever RocketBot is installed
-
-## TODO
-
-* Periodically rescan while running
