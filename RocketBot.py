@@ -6,7 +6,7 @@ import random
 from dotenv import load_dotenv
 
 def get_rocket_urls():
-    user_id = '8380370132'
+    user_id =  os.getenv('ROCKET_ID')
     web_api = MyClient(auto_patch=True, drop_incompat_keys=False)
     user_feed_info = web_api.user_feed(user_id, count=50)
     urls = []
