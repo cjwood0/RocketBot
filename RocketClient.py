@@ -4,7 +4,7 @@ import random
 
 from instagram_web_api import Client
 
-class MyClient(Client):
+class RocketClient(Client):
   @staticmethod
   def _extract_rhx_gis(html):
       options = string.ascii_lowercase + string.digits
