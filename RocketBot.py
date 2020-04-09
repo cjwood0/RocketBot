@@ -2,9 +2,10 @@ from instagram_web_api import Client, ClientCompatPatch, ClientError
 from MyClient import MyClient
 import os
 import discord
+import random
 from dotenv import load_dotenv
 
-def get_rocket_url():
+def get_rocket_urls():
     user_id = '8380370132'
     web_api = MyClient(auto_patch=True, drop_incompat_keys=False)
     user_feed_info = web_api.user_feed(user_id, count=50)
@@ -24,10 +25,20 @@ def get_rocket_url():
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+rocket_urls = get_rocket_urls()
+
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    print(client.user + ' has connected to Discord!')
+    print('Connected to Discord!')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('+rocket'):
+        await message.channel.send(random.choice(rocket_urls))
 
 client.run(TOKEN)
