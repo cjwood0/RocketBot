@@ -35,10 +35,13 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    e = discord.Embed()
+
     if message.author == client.user:
         return
 
     if message.content.startswith('+rocket'):
-        await message.channel.send(random.choice(rocket_urls))
+        e.set_image(url=random.choice(rocket_urls))
+        await message.channel.send(embed=e)
 
 client.run(TOKEN)
