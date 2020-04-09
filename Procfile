@@ -1,1 +1,1 @@
-worker: python RocketBot.py
+worker: python3 RocketBot.py
