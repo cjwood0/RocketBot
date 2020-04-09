@@ -29,4 +29,3 @@ pip install
 ## TODO
 
 * Periodically rescan while running
-* Directly imbed images
