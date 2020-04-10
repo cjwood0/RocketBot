@@ -5,7 +5,7 @@ import io
 from dotenv import load_dotenv
 from rocket_detection import detect_common_objects
 
-dotenv.load_dotenv()
+load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 ROCKET_ID =  os.getenv('ROCKET_ID')
 
