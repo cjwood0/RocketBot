@@ -1,9 +1,9 @@
 import os, discord, random, RocketClient, aiohttp, cv2
 import numpy
-import cvlib as cv
 from PIL import Image
 import io
 from dotenv import load_dotenv
+from rocket_detection import detect_common_objects
 
 dotenv.load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -48,7 +48,7 @@ async def on_message(message):
               return await channel.send('Could not download file...')
             res = Image.open(io.BytesIO(await resp.read()))
             res = numpy.array(res)
-            bbox, label, conf = cv.detect_common_objects(res)
+            bbox, label, conf = detect_common_objects(res)
             if len(label) == dogs_requested:
               e.set_image(url=random.choice(rocket_urls))
               await message.channel.send(embed=e)
