@@ -50,7 +50,7 @@ async def on_message(message):
             res = numpy.array(res)
             bbox, label, conf = detect_common_objects(res)
             if len(label) == dogs_requested:
-              e.set_image(url=random.choice(rocket_urls))
+              e.set_image(url=rocket_url)
               await message.channel.send(embed=e)
               break
     else:
