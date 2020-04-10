@@ -1,8 +1,9 @@
-import os, discord, random, dotenv, RocketClient, aiohttp, cv2
+import os, discord, random, RocketClient, aiohttp, cv2
 import numpy
 import cvlib as cv
 from PIL import Image
 import io
+from dotenv import load_dotenv
 
 dotenv.load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
