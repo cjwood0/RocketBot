@@ -48,8 +48,9 @@ async def on_message(message):
               return await channel.send('Could not download file...')
             res = Image.open(io.BytesIO(await resp.read()))
             res = numpy.array(res)
-            bbox, label, conf = detect_common_objects(res)
-            if len(label) == dogs_requested:
+
+            dogs = detect_common_objects(res)
+            if dogs == dogs_requested:
               e.set_image(url=rocket_url)
               await message.channel.send(embed=e)
               break
