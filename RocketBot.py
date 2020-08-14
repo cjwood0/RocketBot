@@ -21,8 +21,8 @@ while True: # get rocket urls until there's no cursor
   for rocket in rocket_feed:
     rocket_urls += [rocket['node']['display_resources'][-1]['src']]
   cursor = rocket_feed[-1]['node']['edge_media_to_comment']['page_info']['end_cursor']
-  #if cursor == None:
-  break
+  if cursor == None:
+    break
 
 @client.event
 async def on_ready():
