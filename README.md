@@ -4,6 +4,8 @@
 
 RocketBot collects URLs from Rocket's Instagram and embeds them in Discord on command.
 
+It uses machine learning libraries like OpenCV, Tensorflow, and darknet for object detection. Before work got in the way, future developments included statistical analysis of the color pattern of known dogs of the same breed to discren between them.
+
 ---
 
 ## Installation
